@@ -1,4 +1,5 @@
 # LSTM_Donors_choose.org
+<img src = https://github.com/yatscool007/LSTM_Donors_choose.org/blob/master/Images/Capture1.PNG>
 <p>
 DonorsChoose.org receives hundreds of thousands of project proposals each year for classroom projects in need of funding. Right now, a large number of volunteers is needed to manually screen each submission before it's approved to be posted on the DonorsChoose.org website.
 </p>
@@ -32,8 +33,6 @@ We performed initial feature engineering on the data and curated features like _
 <br>__Data Preprocessing and Modelling__:
 for text data,removing stopwords,url tags ,lowercase and performing porter stemming and Lemmetization and we performed different data preprocessing techniques for all three models implemented (with diffrent architecture-
     <br>- __Model 1__: we used binary Countvectorizer to convert Categorical features into one hot coded vectors and for text data we used Keras text tokenizer for turning each text into a sequence of integers.An then used embedding layers for each of the categorical input while for text data we used pre trained glove vectors as our embedding layer which we kept 'non-trainable'
- The architecture we followed in the model was :
- <img src = https://github.com/yatscool007/LSTM_Donors_choose.org/blob/master/Images/mod1.PNG></br>
     <br>- __Model 2__:Using the same model as above but for 'input_seq_total_text_data' give only some words in the sentance not all the words and filtering the words as below. 
 <p>
 1. Training  the TF-IDF on the Train data <br>
@@ -41,10 +40,18 @@ for text data,removing stopwords,url tags ,lowercase and performing porter stemm
 3. Removing the low idf value and high idf value words from our data. Do some analysis on the Idf values and based on those values choose the low and high threshold value. Because very frequent words and very very rare words don't give much information. (you can plot a box plots and take only the idf scores within IQR range and corresponding words)<br>
 4. Training the LSTM after removing the Low and High idf value words.</p>
 </br>
-    <br>- __Model 3__:
+  <br>- __Model 3__:
         . Using text column, and use the Embedding layer to get word vectors. <br>
         . Use given predefined glove vectors <br>
         . Using LSTM, get the LSTM output and Flatten that output. <br>
         . Converting all the Categorical values to onehot coded and then concatenating all these onehot coded vectors <br>
-        . Numerical values and use <a href='https://keras.io/getting-started/sequential-model-guide/#sequence-classification-with-1d-             convolutions'>CNN1<br>
+        . Numerical values and use <a href='https://keras.io/getting-started/sequential-model-guide/#sequence-classification-with-1d- convolutions'>CNN1<br>
     
+## Results:
+<img src = https://github.com/yatscool007/LSTM_Donors_choose.org/blob/master/Images/res1.PNG>
+<img src = https://github.com/yatscool007/LSTM_Donors_choose.org/blob/master/Images/Capture2.PNG>
+<img src = https://github.com/yatscool007/LSTM_Donors_choose.org/blob/master/Images/Capture4.PNG>
+<img src = https://github.com/yatscool007/LSTM_Donors_choose.org/blob/master/Images/Capture6.PNG>
+
+
+
